@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/whatup-andy.iml" filepath="$PROJECT_DIR$/whatup-andy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/whatupandy/whatupandy.iml" filepath="$PROJECT_DIR$/whatupandy/whatupandy.iml" />
+    </modules>
+  </component>
+</project>
+
