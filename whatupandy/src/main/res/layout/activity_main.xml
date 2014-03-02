@@ -11,46 +11,99 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView"
         android:textAlignment="center"
-        android:text="@string/prompt" />
+        android:text="Name"
+        android:layout_below="@+id/message"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button 1"
-        android:id="@+id/button1"
-        android:layout_below="@+id/textView"
+        android:text="Add"
+        android:id="@+id/add"
+        android:layout_below="@+id/editText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button 2"
-        android:id="@+id/button2"
-        android:layout_below="@+id/button1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_centerHorizontal="true"
-        android:text="Large Text"
-        android:id="@+id/message"
-        android:layout_below="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:layout_below="@+id/message"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameEntry"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Cost"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/nameEntry"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        android:id="@+id/remove"
+        android:layout_below="@+id/add"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/add"
+        android:layout_alignEnd="@+id/add" />
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="377dp"
+        android:layout_marginBottom="64dp" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/remove" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Add an Item"
+        android:id="@+id/message"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

@@ -5,46 +5,64 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+import java.util.ArrayList;
+
+public class MainActivity extends Activity implements View.OnClickListener {
+
+    ArrayList<String> ingredients;
+    ArrayAdapter<String> adapter;
+
+    EditText nameEntry;
+    //EditText cost;
+    Button addButton;
+    ListView listView;
+    TextView message;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        listView = (ListView)findViewById(R.id.listView);
+        message = (TextView)findViewById(R.id.message);
+        addButton = (Button)findViewById(R.id.add);
+        nameEntry = (EditText)findViewById(R.id.nameEntry);
+        //cost = (EditText)findViewById(R.id.cost);
 
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
-        imageView.setImageResource(R.drawable.ic_launcher);
-        ImageView imageView2 = new ImageView(this);
-        imageView2.setImageResource(R.drawable.ic_launcher);
+        addButton.setOnClickListener(this);
 
-
-        Button button1 = (Button)findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TextView message = (TextView)findViewById(R.id.message);
-                message.setText("You picked button 1!!");
-            }
-        });
-
-        Button button2 = (Button)findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TextView message = (TextView)findViewById(R.id.message);
-                message.setText("You picked button 2... :-(");
-            }
-        });
+        ingredients = new ArrayList<String>();
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+                ingredients);
+        listView.setAdapter(adapter);
 
         this.setTitle(R.string.hello_world);
 
+    }
+
+    public void onClick(View view){
+        addItems(nameEntry.getText().toString());
+    }
+
+    protected void addItems(String item){
+
+        if (item.length()>0){
+            adapter.add(item);
+            adapter.notifyDataSetChanged();
+            nameEntry.setText("");
+        }
 
     }
+
 
     @Override
     protected void onPause(){
