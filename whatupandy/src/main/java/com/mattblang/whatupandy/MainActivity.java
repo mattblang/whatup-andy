@@ -49,6 +49,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     }
 
+    //duh
+
     public void onClick(View view){
         addItems(nameEntry.getText().toString());
     }
