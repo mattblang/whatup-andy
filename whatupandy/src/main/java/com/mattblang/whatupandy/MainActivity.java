@@ -67,6 +67,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             adapter.notifyDataSetChanged();
             nameEntry.setText("");
         }
+
     }
 
     @Override
