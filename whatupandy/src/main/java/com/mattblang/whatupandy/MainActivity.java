@@ -1,10 +1,12 @@
 package com.mattblang.whatupandy;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -53,6 +55,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     public void onClick(View view){
         addItems(nameEntry.getText().toString());
+
+        // http://stackoverflow.com/a/1109108/1747491
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     protected void addItems(String item){
