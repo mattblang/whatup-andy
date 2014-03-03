@@ -18,12 +18,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity implements View.OnClickListener {
+    //ask Matt about implements View.OnClickListener
 
     ArrayList<String> ingredients;
     ArrayAdapter<String> adapter;
 
     EditText nameEntry;
-    //EditText cost;
+    EditText costEntry;
     Button addButton;
     ListView listView;
     TextView message;
@@ -38,7 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         message = (TextView)findViewById(R.id.message);
         addButton = (Button)findViewById(R.id.add);
         nameEntry = (EditText)findViewById(R.id.nameEntry);
-        //cost = (EditText)findViewById(R.id.cost);
+        costEntry = (EditText)findViewById(R.id.costEntry);
 
         addButton.setOnClickListener(this);
 
@@ -51,7 +52,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     }
 
-    //duh
 
     public void onClick(View view){
         addItems(nameEntry.getText().toString());
@@ -62,16 +62,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     protected void addItems(String item){
-
         if (item.length()>0){
             adapter.add(item);
             adapter.notifyDataSetChanged();
             nameEntry.setText("");
         }
-
-
     }
-
 
     @Override
     protected void onPause(){
